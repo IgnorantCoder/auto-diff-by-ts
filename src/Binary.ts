@@ -77,5 +77,5 @@ export function div(
     if (typeof y === 'number') {
         return new Dual.Variable(x.x() / y, x.dx() / y);
     }
-    return new Dual.Variable(x.x() / y.x(), y.x() * x.dx() - x.x() * y.dx());
+    return new Dual.Variable(x.x() / y.x(), (y.x() * x.dx() - x.x() * y.dx()) / (y.x() * y.x()));
 }
